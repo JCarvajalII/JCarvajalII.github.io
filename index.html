@@ -1,33 +1,18 @@
 <html>
     <head>
         <title> </title>
-        <link rel="manifest" href="manifest.json">
-
-        <meta name="mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="application-name" content="Jeep">
-        <meta name="apple-mobile-web-app-title" content="Jeep">
-        <meta name="theme-color" content="#000000">
-        <meta name="msapplication-navbutton-color" content="#000000">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-        <meta name="msapplication-starturl" content="/">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-        <link rel="icon" type="image/png" sizes="1300x1300" href="jeepicon">
-        <link rel="apple-touch-icon" type="image/png" sizes="1300x1300" href="jeepicon">
     </head>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <body>
-        <header><h1>Jeepney Terminal Locator For Tourist Spots</h1></header>
-        <!-- Notification: notify the user of the closing time of terminals that they have chosen -->
-        <!-- IndexedDB - stores the contact info of the user-->
         <nav id="nav" class="nav">
-            <ul>
-                <li>HOME</li>
-                <li>CONTACT US</li>
-                <li>Gallery</li>
+            <ul class="nav ul">
+                <li class="nav li"><a href="#" class="nav home">Home</a></li>
+                <li class="nav li"><a href="#" class="nav gallery">Gallery</a></li>
+                <li class="nav li"><a href="#" class="nav us">Contact Us</a></li>
             </ul>
         </nav>
-        <input type="text" id="myInput" onkeyup="searchFunction()" placeholder="Search for names.." title="Type in a name">
+        <header><h1>Jeepney Terminal Locator For Tourist Spots</h1></header>
+        <input type="text" id="myInput" onkeyup="searchFunction()" placeholder="What is your destination?" title="Type in a name">        
         <ul id="myUL">
             <li>
                 <h2>Mines View Park</h2>
@@ -261,36 +246,39 @@
                 Hillside and PNR Terminal
         </p>
         <button onclick="notifyMe()">Notify me!</button>
+        <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('js/service-worker.js');
+        }
+        </script>
         <script src="js/app.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', function () {
-            if (!Notification) {
-                alert('Desktop notifications not available in your browser. Try Chromium.'); 
-                return;
-            }
+  if (!Notification) {
+    alert('Desktop notifications not available in your browser. Try Chromium.'); 
+    return;
+  }
 
-            if (Notification.permission !== "granted")
-                Notification.requestPermission();
-            });
+  if (Notification.permission !== "granted")
+    Notification.requestPermission();
+});
 
-            function notifyMe() {
-                if (Notification.permission !== "granted")
-                    Notification.requestPermission();
-                else {
-                    var notification = new Notification('Notification title', {
-                        icon: 'http://cdn.sstatic.net/stackexchange/img/logos/so/so-icon.png',
-                        body: "Hey there! You've been notified!",
-                    });
-                    notification.onclick = function () {
-                        window.open("http://stackoverflow.com/a/13328397/1269037");      
-                    };
-                }
-            }
-        </script>
-        <script>
-            if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.register('service-worker.js');
-            }
+function notifyMe() {
+  if (Notification.permission !== "granted")
+    Notification.requestPermission();
+  else {
+    var notification = new Notification('Notification title', {
+      icon: 'http://cdn.sstatic.net/stackexchange/img/logos/so/so-icon.png',
+      body: "Hey there! You've been notified!",
+    });
+
+    notification.onclick = function () {
+      window.open("http://stackoverflow.com/a/13328397/1269037");      
+    };
+
+  }
+
+}
         </script>
     </body>
 </html>

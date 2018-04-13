@@ -1,16 +1,18 @@
 {
-  "name": "JeepJeep",
-  "short_name": "Jeep",
+  "name": "BeepJeep",
+  "short_name": "BeepJeep",
+  "description": "Jeep Terminal Locator for Baguio",
   "lang": "en-US",
-  "start_url": "/",
-  "display": "Fullscreen",
-  "theme_color": "red",
-  "background_color": "red",
+  "start_url": "/192.168.254.117",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "theme_color": "#ffffff",
   "icons": [
     {
       "src": "jeepicon.jpg",
       "sizes": "1300x1300",
-      "type": "image/png"
+      "type": "image/jpeg"
     }
-  ]
+  ],
+  "background_color": "#ffffff"
 }

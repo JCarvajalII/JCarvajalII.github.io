@@ -1,11 +1,20 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <title> </title>
 </head>
 <link rel="stylesheet" type="text/css" href="style.css">
 <body>
     <div id="wrapper">
-
+        
+        <!-- Menu -->
+        <nav id="menu" class="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
 
         <div id="main">
             <div class="inner">
@@ -127,82 +136,23 @@
                     <h2>Dinosaur Island</h2>
                 </li>
             </ul>
-        </div>
-    </div>
-    <p>
-        Baguio Terminals
-        La Trinidad Terminal(CenterMall)
 
-        La Trinidad Terminal(Rizal Park)
-
-        Lucandula Street Terminal             
-
-        Brookside Terminal (CenterMall)
-
-        Modernsite Aurora Hill Jeepney Terminal
-
-        Lourdes Dominican Hill Jeepney Terminal
-
-        Guisad Jeepney Terminal
-
-        Fairview Jeepney Terminal
-
-        Pinsao Pilot Project Jeepney Terminal
-
-        San Carlos Heights Jeepney Terminal
-
-        Quezon Hill Terminal
-
-        San Luis Jeepney Terminal
-
-        Tuba Jeepney Terminal
-
-        Bayanihan Jeepney Terminal
-
-        Loakan-PMA Jeepney Station
-
-        Dagsian Terminal
-
-        Carantes Terminal
-
-        Hillside and PNR Terminal
-    </p>
-    <button onclick="notifyMe()">Notify me!</button>
-</div>
+        <form role="form" onsubmit="addCustomer()">
+        <label>Customer Name</label>
+        <input type="text" id="cName" placeholder="Enter Name...">
+        <label>Customer Email</label>
+        <input type="email" id="cEmail" placeholder="Enter Email...">
+        <label>Customer Phone Number</label>
+        <input type="text" id="phNumber" placeholder="Enter Phone Number...">
+        <button type="submit">Submit</button>
+        </form>
+        <button onclick="notifyMe()">Notify me!</button>
+        <script src="js/app.js"></script>
 
 <script>
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('js/service-worker.js');
+    if ('serviceWorker' in navigator) {    navigator.serviceWorker.register('service-worker.js');
     }
 </script>
 <script src="js/app.js"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-      if (!Notification) {
-        alert('Desktop notifications not available in your browser. Try Chromium.'); 
-        return;
-    }
-
-    if (Notification.permission !== "granted")
-        Notification.requestPermission();
-});
-
-    function notifyMe() {
-      if (Notification.permission !== "granted")
-        Notification.requestPermission();
-    else {
-        var notification = new Notification('Notification title', {
-          icon: 'http://cdn.sstatic.net/stackexchange/img/logos/so/so-icon.png',
-          body: "Hey there! You've been notified!",
-      });
-
-        notification.onclick = function () {
-          window.open("http://stackoverflow.com/a/13328397/1269037");      
-      };
-
-  }
-
-}
-</script>
 </body>
 </html>

@@ -443,9 +443,6 @@ h6 {
 	margin-bottom: 0;
 }
 
-.tiles li h3, p {
-	text-align: center;
-}
 
 .tiles li.style1 > .image:before {
 	background-color: #f2849e;
@@ -638,4 +635,100 @@ body.is-touch .tiles li .content {
 	}
 
 }
+
+
+/* Button */
+
+	button,
+	.button {
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		-ms-appearance: none;
+		appearance: none;
+		-moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+		-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+		-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+		background-color: transparent;
+		border-radius: 4px;
+		border: 0;
+		box-shadow: inset 0 0 0 2px #585858;
+		color: #585858 !important;
+		cursor: pointer;
+		display: inline-block;
+		font-size: 0.8em;
+		font-weight: 900;
+		height: 3.5em;
+		letter-spacing: 0.35em;
+		line-height: 3.45em;
+		overflow: hidden;
+		padding: 0 1.25em 0 1.6em;
+		text-align: center;
+		text-decoration: none;
+		text-overflow: ellipsis;
+		text-transform: uppercase;
+		white-space: nowrap;
+		float: right;
+	}
+
+		button.icon:before,
+		.button.icon:before {
+			margin-right: 0.5em;
+		}
+
+		button.fit,
+		.button.fit {
+			display: block;
+			margin: 0 0 1em 0;
+			width: 100%;
+		}
+
+		button:hover,
+		.button:hover {
+			color: #f2849e !important;
+			box-shadow: inset 0 0 0 2px #f2849e;
+		}
+
+		button:active,
+		.button:active {
+			background-color: rgba(242, 132, 158, 0.1);
+		}
+
+		button.small,
+		.button.small {
+			font-size: 0.6em;
+		}
+
+		button.big,
+		.button.big {
+			font-size: 1em;
+		}
+
+		button.special,
+		.button.special {
+			box-shadow: none;
+			background-color: #585858;
+			color: #ffffff !important;
+		}
+
+			button.special:hover,
+			.button.special:hover {
+				background-color: #f2849e;
+			}
+
+			button.special:active,
+			.button.special:active {
+				background-color: #ee5f81;
+			}
+
+		button.disabled,
+		button:disabled,
+		.button.disabled,
+		.button:disabled {
+			-moz-pointer-events: none;
+			-webkit-pointer-events: none;
+			-ms-pointer-events: none;
+			pointer-events: none;
+			opacity: 0.25;
+		}
 

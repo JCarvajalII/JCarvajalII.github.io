@@ -1,0 +1,16 @@
+{
+  "name": "JeepJeep",
+  "short_name": "Jeep",
+  "lang": "en-US",
+  "start_url": "/",
+  "display": "Fullscreen",
+  "theme_color": "red",
+  "background_color": "red",
+  "icons": [
+    {
+      "src": "jeepicon.jpg",
+      "sizes": "1300x1300",
+      "type": "image/png"
+    }
+  ]
+}

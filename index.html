@@ -138,51 +138,14 @@
         <input type="email" id="cEmail" placeholder="Enter Email...">
         <label>Customer Phone Number</label>
         <input type="text" id="phNumber" placeholder="Enter Phone Number...">
-        <button type="submit" onclick="addCustomer()">Submit</button>
+        <button type="submit">Submit</button>
         </form>
         <button onclick="notifyMe()">Notify me!</button>
         <script src="js/app.js"></script>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-            if (!Notification) {
-                alert('Desktop notifications not available in your browser. Try Chromium.'); 
-                return;
-            }
-        </script>
 
 <script>
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('js/service-worker.js');
+    if ('serviceWorker' in navigator) {    navigator.serviceWorker.register('js/service-worker.js');
     }
-</script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-      if (!Notification) {
-        alert('Desktop notifications not available in your browser. Try Chromium.'); 
-        return;
-    }
-
-    if (Notification.permission !== "granted")
-        Notification.requestPermission();
-});
-
-    function notifyMe() {
-      if (Notification.permission !== "granted")
-        Notification.requestPermission();
-    else {
-        var notification = new Notification('Notification title', {
-          icon: 'http://cdn.sstatic.net/stackexchange/img/logos/so/so-icon.png',
-          body: "Hey there! You've been notified!",
-      });
-
-        notification.onclick = function () {
-          window.open("http://stackoverflow.com/a/13328397/1269037");      
-      };
-
-  }
-
-}
 </script>
 <script src="js/app.js"></script>
 </body>

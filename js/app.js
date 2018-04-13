@@ -15,31 +15,32 @@ function searchFunction() {
 }
 
 //IndexedDB
-// name, email, phonenumber
-var indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB || window.shimIndexedDB;
+var request = indexedDB.open("PWADB", 1);
 
-// Open (or create) the database
-var mydb = window.indexedDB.open("PWADB", 1), db, tx, store, index;
+request.onsuccess = function(e) {
+    console.log("Success. Opened Database..");
+    db = e.target.result;
+}
 
-mydb.onupgradeneeded = function() {
-    db = mydb.result,
-        store = db.createObjectStore("customerSupport", {keypath: id, autoIncrement: true}), 
+request.onerror = function(e) {
+    console.log("Error on opening database...");
 }
-mydb.onerror = function(e) {
-    console.log("There was an error" + e.target.errorCode);
-}
-mydb.onsuccess = function(e) {
-    console.log("Success");
-    db = mydb.result;
-}
+
+request.onupgradeneeded = function(e) {
+    var db = e.target.result;
     
+    if(!db.objectStoreNames.contains('customer')) {
+        var os = db.createObjectStore('customer', {keyPath: "id", autoIncrement: true});
+    }
+}
+
 function addCustomer() {
-    var name = document.getElementById("cName");
-    var email = document.getElementById("cEmail");
-    var number = document.getElementById("phNumber");
+    var name = document.getElementById("cName").value;
+    var email = document.getElementById("cEmail").value;
+    var number = document.getElementById("phNumber").value;
     
-    tx = db.transaction(["customerSupport"], "readwrite")
-    store = transaction.objectStore("customerSupport");
+    var tx = db.transaction(["customer"], "readwrite");
+    var store = tx.objectStore("customer");
     
     var customer = {
         name: name,
@@ -49,12 +50,12 @@ function addCustomer() {
     var request = store.add(customer);
     
     request.onsuccess = function(e) {
-        request.location.href="index.html";
-        alert("Thank you. Your information was sent successfully. We will contact you asap.");
+        window.location.href="index.html";
+        console.log("Thank you. Your information was sent successfully. We will contact you asap.");
     }
     
     request.onerror = function(e){
-        alert("Error");
+        console.log("Error");
     }
     
 }

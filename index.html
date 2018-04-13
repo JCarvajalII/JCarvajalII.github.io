@@ -1,265 +1,128 @@
 <html>
-    <head>
-        <title> </title>
-        <link rel="manifest" href="manifest.json">
+<head>
+    <title> </title>
+</head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<body>
+    <div id="wrapper">
 
-        <meta name="mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="application-name" content="Jeep">
-        <meta name="apple-mobile-web-app-title" content="Jeep">
-        <meta name="theme-color" content="#000000">
-        <meta name="msapplication-navbutton-color" content="#000000">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-        <meta name="msapplication-starturl" content="/">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <link rel="icon" type="image/png" sizes="1300x1300" href="jeepicon">
-        <link rel="apple-touch-icon" type="image/png" sizes="1300x1300" href="jeepicon">
-    </head>
-    <body>
-        <header><h1>Jeepney Terminal Locator For Tourist Spots</h1></header>
-        <!-- Notification: notify the user of the closing time of terminals that they have chosen -->
-        <!-- IndexedDB - stores the contact info of the user-->
-        <nav id="nav" class="nav">
-            <ul>
-                <li>HOME</li>
-                <li>CONTACT US</li>
-                <li>Gallery</li>
+        <div id="main">
+            <div class="inner">
+                <header><h1>Jeepney Terminal Locator For Tourist Spots</h1></header>
+                <input type="text" id="myInput" onkeyup="searchFunction()" placeholder="What is your destination?" title="Type in a name">
+
+                <ul id="myUL" class="tiles">
+                    <li class="style1">
+                        <div class="image">
+                            <img src="images/Mines View Park.jpg" alt="" />
+                        </div>
+                        <h2>Mines View Park</h2>
+                    </li>
+                    <li class="style1">
+                        <div class="image">
+                           <img src="images/Good Shepherd Convent.jpg" alt="" />
+                       </div>
+                       <h2>Good Shepherd Convent</h2>
+                   </li>
+                   <li class="style1">
+                    <div class="image">
+                        <img src="images/Wright Park.jpg" alt="" />
+                    </div>
+                    <h2>Wright Park</h2>
+                </li>
+                <li class="style1">
+                    <div class="image">
+                        <img src="images/The Mansion - freedomwall.net.jpg" alt="" />
+                    </div>
+                    <h2>The Mansion</h2>
+                </li>
+                <li class="style1">
+                    <div class="image">
+                        <img src="images/Botanical Garden.jpg" alt="" />
+                    </div>
+                    <h2>Botanical Garden</h2>
+                </li>
+                <li class="style1">
+                    <div class="image">
+                        <img src="images/Teachers Camp.jpg" alt="" />
+                    </div>
+                    <h2>Teachers Camp</h2>
+                </li>
+                <li class="style1">
+                    <div class="image">
+                        <img src="images/Laperal House - The Poor Traveler.jpg" alt="" />
+                    </div>
+                    <h2>Laperal White House</h2>
+                </li>
+                <li class="style1">
+                    <div class="image">
+                        <img src="images/CJH.jpg" alt="" />
+                    </div>
+                    <h2>Camp John Hay</h2>
+                </li>
+                <li class="style1">
+                    <div class="image">
+                        <img src="images/Tam Awan Village - No Juan Is An Island.jpg" alt="" />
+                    </div>
+                    <h2>Tam Awan Village</h2>
+                </li>
+                <li class="style1">
+                    <div class="image">
+                        <img src="images/Strawberry Farm - Environmental Involvement and Commitment.jpg" alt="" />
+                    </div>
+                    <h2>Strawberry Farm</h2>
+                </li>
+                <li class="style1">
+                    <div class="image">
+                        <img src="images/StoBoSa - Lakad Pilipinas.jpg" alt="" />
+                    </div>
+                    <h2>StoBoSa Artwork</h2>
+                </li>
+                <li class="style1">
+                    <div class="image">
+                        <img src="images/Panagbenga Park.jpg" alt="" />
+                    </div>
+                    <h2>Panagbenga Park</h2>
+                </li>
+                <li class="style1">
+                    <div class="image">
+                        <img src="images/Baguio Museum.jpg" alt="" />
+                    </div>
+                    <h2>Baguio Museum</h2>
+                </li>
+                <li class="style1">
+                    <div class="image">
+                        <img src="images/Lion's Head.jpg" alt="" />
+                    </div>
+                    <h2>Lion's Head</h2>
+                </li>
+                <li class="style1">
+                    <div class="image">
+                        <img src="images/Dominican Hotel - Juan Manila Express.jpg" alt="" />
+                    </div>
+                    <h2>The Baguio Dominican Heritage Hill and Nature Park</h2>
+                </li>
+                <li class="style1">
+                    <div class="image">
+                        <img src="images/Lourdes Grotto - RJD Explorer.jpg" alt="" />
+                    </div>
+                    <h2>Lourdes Grotto</h2>
+                </li>
+                <li class="style1">
+                    <div class="image">
+                        <img src="images/PMA - Forest House Baguio.jpg" alt="" />
+                    </div>
+                    <h2>Philippine Military Academy</h2>
+                </li>
+                <li class="style1">
+                    <div class="image">
+                        <img src="images/Dinosaur Island.jpg" alt="" />
+                    </div>
+                    <h2>Dinosaur Island</h2>
+                </li>
             </ul>
-        </nav>
-        <input type="text" id="myInput" onkeyup="searchFunction()" placeholder="Search for names.." title="Type in a name">
-        <ul id="myUL">
-            <li>
-                <h2>Mines View Park</h2>
-                <p></p>
-            </li>
-            <li>
-                <h2>Strawberry Farm</h2>
-                <p>Buyagan jeeps</p>
-                <p>Tomay jeeps</p>
-                <p>Camp Dangwa</p>
-                <p>Alapang Jeep</p>
-                <p>Acop Jeep</p>
-            </li>
-            <li>
-                <h2>Botanical Garden</h2>
-                <p>Mines View jeep</p>
-                <p>liteng jeep</p>
-                <p>navy base jeep</p>
-                <p>Maria Basa jeep</p>
-            </li>
-            <li>
-                <h2>Good Shepherd Convent</h2>
-                <p>Mines View Jeeps</p>
-                <p>Pacdal bound Jeeps</p>
-                <p></p>
-            </li>
-            <li>
-                <h2>The Mansion</h2>
-                <p>Mines View Jeeps</p>
-                <p>Pacdal bound Jeeps</p>
-                <p></p>
-                <p></p>
-            </li>
-            <li>
-                <h2>Wright Park</h2>
-                <p>Mines View Jeeps</p>
-                <p>Pacdal bound Jeeps</p>
-                <p></p>
-            </li>
-            <li>
-                <h2>Burnham Lake</h2>
-                <p></p>
-                <p></p>
-                <p></p>
-            </li>
-            <li>
-                <h2>Lions Head</h2>
-                <p>Camp 7 Jeeps</p>
-                <p></p>
-                <p></p>
-            </li>
-            <li>
-                <h2>Bencab Museum</h2>
-                <p>Asin Jeeps</p>
-                <p></p>
-                <p></p>
-            </li>
-            <li>
-                <h2>Riverview Water Park</h2>
-                <p>Asin Jeeps</p>
-                <p></p>
-                <p></p>
-            </li>
-            <li>
-                <h2>Baguio Cathedral</h2>
-                <p>Trancoville Jeeps</p>
-                <p>Aurora Hill Jeeps</p>
-                <p></p>
-            </li>
-            <li>
-                <h2>Taw-awan village</h2>
-                <p>Tam-Awan Jeeps</p>
-                <p></p>
-                <p></p>
-            </li>
-            <li>
-                <h2>Mt Kalugong</h2>
-                <p>Tomay - Camp Dangwa La Trinidad Jeep</p>
-                <p>Buyagan La Trinidad Jeep</p>
-                <p>Pico - Puguis La Trinidad Jeep</p>
-                <p>Alapang Jeep</p>
-                <p>Acop - Shilan Jeep</p>
-                <p>Bayabas Jeep</p>
-            </li>
-            <li>
-                <h2>Mt. Ulap</h2>
-                <p></p>
-                <p></p>
-                <p></p>
-            </li>
-            <li>
-                <h2>Bell Church</h2>
-                <p>Tomay - Camp Dangwa La Trinidad Jeep</p>
-                <p>Buyagan La Trinidad Jeep</p>
-                <p>Pico - Puguis La Trinidad Jeep</p>
-                <p>Alapang Jeep</p>
-                <p>Acop - Shilan Jeep</p>
-                <p>Bayabas Jeep</p>
-            </li>
-            <li>
-                <h2>Diplomat Hotel</h2>
-                <p>Dominican Jeeps</p>
-                <p></p>
-                <p></p>
-            </li>
-            <li>
-                <h2>Session Road</h2>
-                <p>Tomay - Camp Dangwa La Trinidad Jeep</p>
-                <p>Buyagan La Trinidad Jeep</p>
-                <p>Pico - Puguis La Trinidad Jeep</p>
-                <p>Alapang Jeep</p>
-                <p>Acop - Shilan Jeep</p>
-                <p>Bayabas Jeep</p>
-                <p>Trancoville Jeeps</p>
-                <p>Bakakeng Jeeps</p>
-            </li>
-            <li>
-                <h2>Mines View</h2>
-                <p>Mines View Jeep</p>
-                <p></p>
-                <p></p>
-            </li>
-            <li>
-                <h2>River View Waterpark</h2>
-                <p>Asin Jeeps</p>
-                <p></p>
-                <p></p>
-            </li>
-            <li>
-                <h2>Dominican Hill Retreat House</h2>
-                <p></p>
-                <p></p>
-                <p></p>
-            </li>
-            <li>
-                <h2>White House</h2>
-                <p>Mines View Jeeps</p>
-                <p>Liteng Jeeps</p>
-                <p>Navy base Jeeps</p>
-                <p>Maria Basa Jeeps</p>
-            </li>
-            <li>
-                <h2>Baguio Orchidarium</h2>
-                <p></p>
-                <p></p>
-                <p></p>
-            </li>
-            <li>
-                <h2>Dinosaur Island</h2>
-                <p>Badiwan Tuba Jeeps</p>
-                <p></p>
-                <p></p>
-            </li>
-            <li>
-                <h2>Stobosa Artwork</h2>
-                <p>Tomay - Camp Dangwa La Trinidad Jeep</p>
-                <p>Buyagan La Trinidad Jeep</p>
-                <p>Pico - Puguis La Trinidad Jeep</p>
-                <p>Alapang Jeep</p>
-                <p>Acop - Shilan Jeep</p>
-                <p>Bayabas Jeep</p>
-            </li>
-            <li>
-                <h2>Camp John Hay</h2>
-                <p>Scout Bario Jeeps</p>
-                <p>Kias Jeeps</p>
-                <p></p>
-            </li>
-            <li>
-                <h2>Panagbenga Park</h2>
-                <p>Scout Bario Jeeps</p>
-                <p>Kias Jeeps</p>
-                <p></p>
-            </li>
-            <li>
-                <h2>Mount Costa</h2>
-                <p></p>
-                <p></p>
-                <p></p>
-            </li>
-            <li>
-                <h2>Baguio Museum</h2>
-                <p></p>
-                <p></p>
-                <p></p>
-            </li>
-            <li>
-                <h2>Teachers Camp</h2>
-                <p>Mines View Jeeps</p>
-                <p>Liteng Jeeps</p>
-                <p>Navy Base Jeeps</p>
-                <p>Maria Basa Jeeps</p>
-            </li>
-        </ul>
-        <p>
-            Baguio Terminals
-                La Trinidad Terminal(CenterMall)
-            
-                La Trinidad Terminal(Rizal Park)
-                
-                Lucandula Street Terminal             
-                       
-                Brookside Terminal (CenterMall)
-              
-                Modernsite Aurora Hill Jeepney Terminal
-            
-                Lourdes Dominican Hill Jeepney Terminal
-            
-                Guisad Jeepney Terminal
-            
-                Fairview Jeepney Terminal
-            
-                Pinsao Pilot Project Jeepney Terminal
-            
-                San Carlos Heights Jeepney Terminal
-            
-                Quezon Hill Terminal
-            
-                San Luis Jeepney Terminal
-            
-                Tuba Jeepney Terminal
-            
-                Bayanihan Jeepney Terminal
-            
-                Loakan-PMA Jeepney Station
-                                     
-                Dagsian Terminal
-            
-                Carantes Terminal
-            
-                Hillside and PNR Terminal
-        </p>
+
         <form role="form" onsubmit="addCustomer()">
         <label>Customer Name</label>
         <input type="text" id="cName" placeholder="Enter Name...">
@@ -277,29 +140,42 @@
                 alert('Desktop notifications not available in your browser. Try Chromium.'); 
                 return;
             }
-
-            if (Notification.permission !== "granted")
-                Notification.requestPermission();
-            });
-
-            function notifyMe() {
-                if (Notification.permission !== "granted")
-                    Notification.requestPermission();
-                else {
-                    var notification = new Notification('Notification title', {
-                        icon: 'http://cdn.sstatic.net/stackexchange/img/logos/so/so-icon.png',
-                        body: "Hey there! You've been notified!",
-                    });
-                    notification.onclick = function () {
-                        window.open("http://stackoverflow.com/a/13328397/1269037");      
-                    };
-                }
-            }
         </script>
-        <script>
-            if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.register('service-worker.js');
-            }
-        </script>
-    </body>
+
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('js/service-worker.js');
+    }
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      if (!Notification) {
+        alert('Desktop notifications not available in your browser. Try Chromium.'); 
+        return;
+    }
+
+    if (Notification.permission !== "granted")
+        Notification.requestPermission();
+});
+
+    function notifyMe() {
+      if (Notification.permission !== "granted")
+        Notification.requestPermission();
+    else {
+        var notification = new Notification('Notification title', {
+          icon: 'http://cdn.sstatic.net/stackexchange/img/logos/so/so-icon.png',
+          body: "Hey there! You've been notified!",
+      });
+
+        notification.onclick = function () {
+          window.open("http://stackoverflow.com/a/13328397/1269037");      
+      };
+
+  }
+
+}
+</script>
+<script src="js/app.js"></script>
+</body>
 </html>

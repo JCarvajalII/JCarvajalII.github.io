@@ -52,6 +52,7 @@ function addCustomer() {
     request.onsuccess = function(e) {
         window.location.href="index.html";
         console.log("Thank you. Your information was sent successfully. We will contact you asap.");
+        alert("Thank you for your time. We will contact you as soon as possible.");
     }
     
     request.onerror = function(e){

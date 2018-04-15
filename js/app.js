@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
         Notification.requestPermission();
     else {
         var notification = new Notification('Notification title', {
-          icon: 'http://cdn.sstatic.net/stackexchange/img/logos/so/so-icon.png',
+          icon: 'jeepicon.png',
           body: "We will notify you!",
       });
 

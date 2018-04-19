@@ -6,6 +6,10 @@
     top: 0;
     bottom: 0;
 }
-#wrapper {
+body {
     background: #ff0000;
+}
+#wrapper {
+    width: 100%;
+    height: 100%;
 }

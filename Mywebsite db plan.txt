@@ -1,0 +1,22 @@
+Database for my website
+
+User Accounts (Client Side)
+table name = users
+number of col = 7(?)
+
+Registration
+firstName
+lastName
+username
+password
+email
+Address 1
+Address 2?*
+Age = currentDate(day, month, year) - birthDate(day, month, year) 
+gender(M or F , *)
+
+After Registration - Logged in
+Set Profile pic (jpeg, png)
+Bio 
+change passwords
+
